@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="EgoBody is a novel large-scale dataset for egocentric 3D human pose, shape and motions under interactions in complex 3D scenes. We employ Microsoft HoloLens2 headsets to record rich egocentric data streams (including RGB, depth, eye gaze, head and hand tracking). To obtain accurate 3D ground-truth, we calibrate the headset with a multi-Kinect rig and fit expressive SMPL-X body meshes to multi-view RGB-D frames, reconstructing 3D human poses and shapes relative to the scene.">
+       <meta name="keywords" content="social interaction; dataset; egocentric view; first-person view; pose estimation; EgoBody; motion capture; 3D motion dataset; human-scene interaction; 3D scene; deep learning; 3D vision; computer vision;">
+      <meta name="author" content="Siwei Zhang">
+      <title>COINS: Compositional Human-Scene Interaction Synthesis with Semantic Control</title>
+
+      <!--<meta property="og:title" content="EgoBody: ..." />-->
+      <!--<meta property="og:description" content="EgoBody is a ... ">-->
+      <!--<meta property="og:image" content="images/teaser.jpg" />-->
+
+      <!--<meta name="twitter:card" content="summary_large_image" />-->
+      <!--<meta name="twitter:title" content="EgoBody: ..." />-->
+      <!--<meta name="twitter:description" content="EgoBody is a ..." />-->
+      <!--<meta name="twitter:image" content="https://neuralbodies.github.io/LEAP/images/teaser1200x630.jpg" />-->
+      <!--<meta name="twitter:image:alt" content="EgoBody" />-->
+
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/scrolling-nav.css" rel="stylesheet">
+      <!-- nice figures  -->
+      <link rel="stylesheet" href="css/font-awesome.css">
+      <link rel="icon" type="image/png" href="images/icon.png">
+
+   </head>
+   <body id="page-top">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">COINS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#about">Overview</a>
+                  </li>
+                   <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#dataset">Dataset</a>
+                  </li>
+                   <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#results">Results</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+                  </li> -->
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#citation">Citation</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                  </li> -->
+               </ul>
+            </div>
+         </div>
+      </nav>
+
+
+      <header class="bg-light text-black">
+          <div class="container text-center">
+             <h1>COINS</h1>
+             <h2>Compositional Human-Scene Interaction Synthesis with Semantic Control</h2><br>
+              <div id="content">
+          <div id="content-inner">
+
+            <div class="section head">
+
+                <div class="authors">
+                    <h5>
+                        <a href="https://vlg.inf.ethz.ch/team/Kaifeng-Zhao.html">Kaifeng Zhao</a><sup>1</sup>&nbsp;
+                        <a href="https://vlg.inf.ethz.ch/team/Shaofei-Wang.html">Shaofei Wang</a><sup>1</sup>&nbsp;
+                        <a href="https://vlg.inf.ethz.ch/team/Dr-Yan-Zhang.html">Yan Zhang</a><sup>1</sup>&nbsp;
+                        <a href="https://thabobeeler.com/">Thabo Beeler</a><sup>2</sup>&nbsp;
+                        <a href="https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html">Siyu Tang</a><sup>1</sup>
+                        <h5>
+                </div>
+
+                <div class="affiliations">
+                    <h5>
+                        <sup>1</sup><a href="https://ethz.ch/en.html">ETH Zürich</a>&nbsp; &nbsp;&nbsp;
+                        <sup>2</sup><a href="https://arvr.google.com/">Google</a> &nbsp;&nbsp;
+                        <h5>
+                </div>
+
+                <div class="venue"><h5>European Conference on Computer Vision (<a href="https://eccv2022.ecva.net/" target="_blank">ECCV</a>) 2022<h5></div>
+
+                <div class="downloads">
+                    <br><h3>
+                    <a class="publink" href="" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;
+                    &nbsp;&nbsp;
+                    <a class="publink" href="https://drive.google.com/drive/folders/1nV_S_m0Yl8p3sOaCLpz5IIZxoL4_TAtE" target="_blank" style="text-decoration: none"> Dataset <i class="fa fa-database"></i></a> &nbsp;
+                    &nbsp;&nbsp;
+                    <a class="publink" href="https://github.com/zkf1997/COINS" target="_blank" style="text-decoration: none"> Code <i class="fa fa-github"></i></a>
+                    <h3>
+                </div>
+
+            </div>
+
+
+            <!-- <br> -->
+
+
+        </div>
+      </header>
+
+
+      <section id="about" class="about-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+
+                  <br><br>
+                  <h2>Overview</h2>
+                  <p class="lead text-justify">
+                     We propose COINS, for <font color="#6495ED">CO</font>mpositional <font color="#6495ED">IN</font>teraction Synthesis with <font color="#6495ED">S</font>emantic Control. 
+                  </p>
+                  <p><img class="img-fluid" alt="teaser" width="100%" src="images/teaser.png"></p>
+                  <p class="lead text-justify">
+                        Given a pair of action and object instance as the semantic specification, our method generates virtual humans naturally interacting with the object (first row). Furthermore, our method retargets interactions on unseen action-object combinations (second row) and synthesizes composite interactions without requiring any corresponding composite training data (third row).
+                  </p>
+                  
+                  <p><img class="img-fluid" alt="pipeline" src="images/pipeline.png"></p>
+                  <p class="lead text-justify">
+                     Given a 3D scene and semantic specifications of actions
+                     (e.g., “sit on”, “touch”) paired with object instances (highlighted with color),
+                     COINS first generates a plausible human pelvis location and orientation and
+                     then generates the detailed body.
+                  </p>
+
+                  <p><img class="img-fluid" alt="pipeline" src="images/bodyvae.png"></p>
+                  <p class="lead text-justify">
+                     Human body and objects are represented as tokens of the transformers while each action category is mapped to
+                     a learnable embedding and added to the corresponding object tokens. Modules
+                     within the dashed box are the semantic conditions of a varying number of actionobject pairs. 
+                     We visualize vertices with positive contact features as blue on the body mesh.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <section id="dataset" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2>PROX-S Dataset</h2>
+                  <div class="text-center">
+                     <p><img class="img-fluid" alt="teaser" src="images/PROX-S.png"></p>
+                      <p class="lead text-justify">
+                              The PROX-S dataset is a human-scene interaction dataset annotated on top of PROX and PROX-E, which contains:<br>
+
+                              (1) scene with instance segmentation<br>
+                              (2) per-frame interaction semantic labels and SMPL-X body estimation<br>
+                        We provide the dataset <a href="https://drive.google.com/drive/folders/1nV_S_m0Yl8p3sOaCLpz5IIZxoL4_TAtE?usp=sharing">here</a> and please refer to the code repository for utility scripts.
+                     </p>
+                 </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section id="results" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                   <h2>Results</h2> <br>
+                   <p><img class="img-fluid" alt="pipeline" src="images/comparison.png"></p>
+                  <p class="lead text-justify">
+                     Our method COINS generates more physically feasible and human-like results than baselines.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <!-- <section id="video" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Video</h2>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="videos/main.mp4" title="EgoBody: Human Body Shape, Motion and Social Interactions from Head-Mounted Devices" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section> -->
+
+
+      <!--<section id="more_vis" class="">-->
+         <!--<div class="container">-->
+            <!--<div class="row">-->
+               <!--<div class="col-lg-10 mx-auto">-->
+                   <!--<br>-->
+                  <!--<h2 class="section-title-tc">More Visualization Results</h2>-->
+                  <!--<div class="embed-responsive embed-responsive-16by9">-->
+                    <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xxx" title="xxx" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                  <!--</div>-->
+               <!--</div>-->
+            <!--</div>-->
+         <!--</div>-->
+
+
+
+      <section id="citation" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Citation</h2>
+                  <!-- <br> -->
+                  <!-- <a class="publink" target="_blank" href="https://arxiv.org/pdf/2112.07642.pdf"><b>
+                    EgoBody: Human Body Shape and Motion of Interacting People from Head-Mounted Devices </b><br></a>
+                    Siwei Zhang, Qianli Ma, Yan Zhang, Zhiyin Qian, Taein Kwon, Marc Pollefeys, Federica Bogo, Siyu Tang<br>
+                  <br><br> -->
+<pre style="display: block; background-color: #f5f5f5; border: 1px solid #ccc; border-radius: 4px">
+@inproceedings{Zhao:ECCV:2022,
+   title = {Compositional Human-Scene Interaction Synthesis with Semantic Control},
+   author = {Zhao, Kaifeng and Wang, Shaofei and Zhang, Yan and Beeler, Thabo and and Tang, Siyu},
+   booktitle = {European conference on computer vision (ECCV)},
+   month = oct,
+   year = {2022}
+}</pre>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+
+
+      <!-- <section id="team" class="team-section">
+         <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="section-title-tc">Team</h2>
+                        <div class="text-center">
+                         <table>
+                               <tr>
+                                   <th> <img src="images/teams/siwei.jpg" width="112" height="112" border="0">  </th>
+                                   <th> <img src="images/teams/qianli.jpg" width="112" height="112" border="0">  </th>
+                                   <th> <img src="images/teams/yan.jpg" width="112" height="112" border="0"> </th>
+                                   <th> <img src="images/teams/zhiyin.jpg" width="112" height="112" border="0">  </th>
+                                   <th> <img src="images/teams/taein.jpg" width="112" height="112" border="0"> </th>
+                                   <th> <img src="images/teams/marc.jpg" width="112" height="112" border="0"> </th>
+                                   <th> <img src="images/teams/federica.jpeg" width="112" height="112" border="0"> </th>
+                                   <th> <img src="images/teams/siyu.jpg" width="112" height="112" border="0"> </th>
+                               </tr>
+
+                               <tr>
+                                   <td> Siwei Zhang  </td>
+                                   <td> Qianli Ma  </td>
+                                   <td> Yan Zhang </td>
+                                   <td> Zhiyin Qian  </td>
+                                   <td> Taein Kwon </td>
+                                   <td> Marc Pollefeys </td>
+                                   <td> Federica Bogo </td>
+                                   <td> Siyu Tang </td>
+                               </tr>
+                         </table>
+
+                        </div>
+                  </div>
+               </div>
+            </div>
+      </section> -->
+
+      <section id="contact" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+	                <h2>Contact</h2>
+		            <br>For questions, please contact Kaifeng Zhao:<br><a href="mailto:kaifeng.zhao@inf.ethz.ch">kaifeng.zhao@inf.ethz.ch</a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-5 bg-dark">
+         <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; VLG 2022</p>
+             <p style="text-align:right;font-size:small;" class="text-white">
+            template from <a href="https://neuralbodies.github.io/LEAP/index.html">LEAP</a>
+         </div>
+         <!-- /.container -->
+      </footer>
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Plugin JavaScript -->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom JavaScript for this theme -->
+      <script src="js/scrolling-nav.js"></script>
+   </body>
+</html>
