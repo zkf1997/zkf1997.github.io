@@ -91,7 +91,7 @@
 
                 <div class="downloads">
                     <br><h3>
-                    <a class="publink" href="" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;
+                    <a class="publink" href="https://drive.google.com/file/d/1LpJe1RiDsB49tQwUFWMUorjBTQfvXzvW/view?usp=sharing" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;
                     &nbsp;&nbsp;
                     <a class="publink" href="https://drive.google.com/drive/folders/1nV_S_m0Yl8p3sOaCLpz5IIZxoL4_TAtE" target="_blank" style="text-decoration: none"> Dataset <i class="fa fa-database"></i></a> &nbsp;
                     &nbsp;&nbsp;
@@ -117,28 +117,32 @@
                   <br><br>
                   <h2>Overview</h2>
                   <p class="lead text-justify">
-                     We propose COINS, for <font color="#6495ED">CO</font>mpositional <font color="#6495ED">IN</font>teraction Synthesis with <font color="#6495ED">S</font>emantic Control. 
+                     We propose <font color="#6495ED">COINS</font>, for <font color="#6495ED">CO</font>mpositional <font color="#6495ED">IN</font>teraction Synthesis with <font color="#6495ED">S</font>emantic Control. 
                   </p>
-                  <p><img class="img-fluid" alt="teaser" width="100%" src="images/teaser.png"></p>
                   <p class="lead text-justify">
-                        Given a pair of action and object instance as the semantic specification, our method generates virtual humans naturally interacting with the object (first row). Furthermore, our method retargets interactions on unseen action-object combinations (second row) and synthesizes composite interactions without requiring any corresponding composite training data (third row).
+                     Given a pair of action and object instance as the semantic specification, our method generates virtual humans naturally interacting with the object (first row). Furthermore, our method retargets interactions on unseen action-object combinations (second row) and synthesizes composite interactions without requiring any corresponding composite training data (third row).
                   </p>
+                  <p><img class="img-fluid" alt="teaser" width="100%" src="images/COINS_teaser.svg"></p>
                   
-                  <p><img class="img-fluid" alt="pipeline" src="images/pipeline.png"></p>
+                  <h2>Method</h2>
                   <p class="lead text-justify">
                      Given a 3D scene and semantic specifications of actions
                      (e.g., “sit on”, “touch”) paired with object instances (highlighted with color),
                      COINS first generates a plausible human pelvis location and orientation and
                      then generates the detailed body.
                   </p>
+                  <p><img class="img-fluid" alt="pipeline" width="100%" src="images/pipeline.svg"></p>
+                  
 
-                  <p><img class="img-fluid" alt="pipeline" src="images/bodyvae.png"></p>
                   <p class="lead text-justify">
-                     Human body and objects are represented as tokens of the transformers while each action category is mapped to
-                     a learnable embedding and added to the corresponding object tokens. Modules
-                     within the dashed box are the semantic conditions of a varying number of actionobject pairs. 
-                     We visualize vertices with positive contact features as blue on the body mesh.
+                     We leverage transformer-based generative models for human pelvis and body generation. 
+                     The articulated 3D human body surface points and 3D objects are jointly encoded
+in a unified latent space, and the semantics of the interaction between the
+human and objects are embedded via positional encoding.
+                     
                   </p>
+                  <p><img class="img-fluid" alt="body_vae" width="100%" src="images/body_vae.svg"></p>
+                  
                </div>
             </div>
          </div>
@@ -153,11 +157,11 @@
                   <div class="text-center">
                      <p><img class="img-fluid" alt="teaser" src="images/PROX-S.png"></p>
                       <p class="lead text-justify">
-                              The PROX-S dataset is a human-scene interaction dataset annotated on top of PROX and PROX-E, which contains:<br>
+                              The PROX-S dataset is a human-scene interaction dataset annotated on top of <a href="https://prox.is.tue.mpg.de/">PROX</a> and <a href="https://github.com/yz-cnsdqz/PSI-release#prox-e">PROX-E</a>, which contains:<br>
 
-                              (1) scene with instance segmentation<br>
-                              (2) per-frame interaction semantic labels and SMPL-X body estimation<br>
-                        We provide the dataset <a href="https://drive.google.com/drive/folders/1nV_S_m0Yl8p3sOaCLpz5IIZxoL4_TAtE?usp=sharing">here</a> and please refer to the code repository for utility scripts.
+                              (1) Scene instance segmentation provided as per mesh vertex labels of instance and category indices<br>
+                              (2) Interaction semantic annotation provided as per-frame SMPL-X body fitting with semantic labels<br>
+                        We provide the dataset <a href="https://drive.google.com/drive/folders/1nV_S_m0Yl8p3sOaCLpz5IIZxoL4_TAtE?usp=sharing">here</a> and please refer to the <a href="https://github.com/zkf1997/COINS">code repository</a> for utility scripts.
                      </p>
                  </div>
                </div>
@@ -170,10 +174,26 @@
             <div class="row">
                <div class="col-lg-10 mx-auto">
                    <h2>Results</h2> <br>
-                   <p><img class="img-fluid" alt="pipeline" src="images/comparison.png"></p>
-                  <p class="lead text-justify">
+
+                   <p class="lead text-justify">
                      Our method COINS generates more physically feasible and human-like results than baselines.
-                  </p>
+                   </p>
+                   <p><img class="img-fluid" alt="pipeline" src="images/comparison.svg"></p>
+                  
+                   <p class="lead text-justify">
+                     Novel interactions of unseen action-object pairs created by COINS.
+                   </p>
+                   <p><img class="img-fluid" alt="pipeline" src="images/retarget.png"></p>
+
+                   <p class="lead text-justify">
+                     We explicitly control COINS to generate bodies of varing shape sizes, including unseen extremely thin and heavy bodies.
+                   </p>
+                   <p><img class="img-fluid" alt="pipeline" src="images/shape.png"></p>
+
+                   <p class="lead text-justify">
+                     Synthesized interactions with noisily segmented objects (visualized as red).
+                   </p>
+                   <p><img class="img-fluid" alt="pipeline" src="images/noisy.png"></p>
                </div>
             </div>
          </div>
