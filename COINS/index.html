@@ -40,7 +40,13 @@
                   <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#about">Overview</a>
                   </li>
-                   <li class="nav-item">
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#demo">Demo</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#method">Method</a>
+                  </li>
+                  <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#dataset">Dataset</a>
                   </li>
                    <li class="nav-item">
@@ -49,6 +55,7 @@
                   <!-- <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#video">Video</a>
                   </li> -->
+                  
                   <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#citation">Citation</a>
                   </li>
@@ -126,6 +133,31 @@
                   </p>
                   <p><img class="img-fluid" alt="teaser" width="100%" src="images/COINS_teaser.svg"></p>
                   
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section id="demo" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                     <h2>Demo</h2> 
+                     <p class="lead text-justify">
+                        Here we provide an interactive demo where you can choose a list of interactions in the format of '<font color="#800000">action</font>-<font color="#FF9933">object category</font>-<font color="#33FF33">object id</font>' and browse <font color="#6495ED">randomly</font> generated interactions.<br>
+                        This demo may take some time to load. Please click the 'generate' button to show the next generated body. You can rotate and zoom the scene using mouse just like most popular 3D viwers.
+                     </p>
+                     <br>
+                     <iframe src="viewer.html" width="100%" height="480px" style="border: 1px solid gray"> </iframe>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section id="method" class="method-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
                   <br>
                   <h2>Method</h2>
                   <p class="lead text-justify">
@@ -233,8 +265,6 @@ human and objects are embedded via positional encoding.
             <!--</div>-->
          <!--</div>-->
 
-
-
       <section id="citation" class="">
          <div class="container">
             <div class="row">
@@ -250,7 +280,6 @@ human and objects are embedded via positional encoding.
    title = {Compositional Human-Scene Interaction Synthesis with Semantic Control},
    author = {Zhao, Kaifeng and Wang, Shaofei and Zhang, Yan and Beeler, Thabo and and Tang, Siyu},
    booktitle = {European conference on computer vision (ECCV)},
-   month = oct,
    year = {2022}
 }</pre>
                </div>
