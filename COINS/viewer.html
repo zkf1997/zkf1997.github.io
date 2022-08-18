@@ -126,7 +126,7 @@
 
 				effectController = {
 					'interaction': 'lie_on-bed-9',
-                    'visualize random sample': load_body 
+                    'visualize next generation': load_body 
 				};
 
 				const gui = new GUI();
@@ -135,17 +135,21 @@
 						'stand_on-floor-2+touch-table-4', 'stand_up-bed-9', 'step_down-chair-3', 
 						'touch-bed-9', 'touch-chair-3', 'touch-monitor-10', 'touch-shelving-11', 
 						'touch-shelving-12', 'A_pose-floor-2', 'walk_on-floor-2'] ).name( 'Choose Interaction' );
-                gui.add( effectController, 'visualize random sample');
+                gui.add( effectController, 'visualize next generation');
 				// gui.add( effectController, 'nonblinn' ).name( 'original scale' ).onChange( render );
 				// gui.add( effectController, 'newShading', [ 'wireframe', 'flat', 'smooth', 'glossy', 'textured', 'reflective' ] ).name( 'Shading' ).onChange( render );
 
 			}
 
             function load_body(){
-                var path = './models/',
-                files = ['0.ply', '1.ply', '2.ply', '3.ply', '4.ply', '5.ply', '6.ply', '7.ply'],
-                i = Math.floor(Math.random()*files.length);
-                var url = (path + effectController.interaction + '/' + files[i]);
+                var path = './models/', num_bodies = 40;
+				var files = [];
+				for (var i = 1; i <= num_bodies; i++) {
+					files.push(i.toString() + '.ply');
+				}
+				console.log(files);
+				var idx = Math.floor(Math.random()*files.length)
+                var url = (path + effectController.interaction + '/' + files[idx]);
                 // PLY file
                 scene.remove(scene.getObjectByName('body'));
 				const loader = new PLYLoader();
