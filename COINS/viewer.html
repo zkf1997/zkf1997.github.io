@@ -126,7 +126,7 @@
 
 				effectController = {
 					'interaction': 'lie_on-bed-9',
-                    'generate': load_body 
+                    'visualize random sample': load_body 
 				};
 
 				const gui = new GUI();
@@ -135,7 +135,7 @@
 						'stand_on-floor-2+touch-table-4', 'stand_up-bed-9', 'step_down-chair-3', 
 						'touch-bed-9', 'touch-chair-3', 'touch-monitor-10', 'touch-shelving-11', 
 						'touch-shelving-12', 'A_pose-floor-2', 'walk_on-floor-2'] ).name( 'Choose Interaction' );
-                gui.add( effectController, 'generate');
+                gui.add( effectController, 'visualize random sample');
 				// gui.add( effectController, 'nonblinn' ).name( 'original scale' ).onChange( render );
 				// gui.add( effectController, 'newShading', [ 'wireframe', 'flat', 'smooth', 'glossy', 'textured', 'reflective' ] ).name( 'Shading' ).onChange( render );
 
