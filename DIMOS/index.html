@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="DIMOS">
+       <meta name="keywords" content="human-scene interaction synthesis">
+      <meta name="author" content="Kaifeng Zhao">
+      <title>Synthesizing Diverse Human Motions in 3D Indoor Scenes</title>
+
+      <!--<meta property="og:title" content="EgoBody: ..." />-->
+      <!--<meta property="og:description" content="EgoBody is a ... ">-->
+      <!--<meta property="og:image" content="images/teaser.jpg" />-->
+
+      <!--<meta name="twitter:card" content="summary_large_image" />-->
+      <!--<meta name="twitter:title" content="EgoBody: ..." />-->
+      <!--<meta name="twitter:description" content="EgoBody is a ..." />-->
+      <!--<meta name="twitter:image" content="https://neuralbodies.github.io/LEAP/images/teaser1200x630.jpg" />-->
+      <!--<meta name="twitter:image:alt" content="EgoBody" />-->
+
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/scrolling-nav.css" rel="stylesheet">
+      <!-- nice figures  -->
+      <link rel="stylesheet" href="css/font-awesome.css">
+      <link rel="icon" type="image/png" href="images/icon.png">
+
+   </head>
+   <body id="page-top">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">DIMOS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#about">Overview</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#demo">Demo</a>
+                  </li> -->
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#method">Method</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#dataset">Dataset</a>
+                  </li>
+                   <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#results">Results</a>
+                  </li>       -->
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#citation">Citation</a>
+                  </li> -->
+                  <!-- <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                  </li> -->
+               </ul>
+            </div>
+         </div>
+      </nav>
+
+
+      <header class="bg-light text-black">
+          <div class="container text-center">
+             <!-- <h1>Inhabiting the Virtual:</h1> -->
+             <h2>Synthesizing Diverse Human Motions in 3D Indoor Scenes</h2><br>
+              <div id="content">
+          <div id="content-inner">
+
+            <div class="section head">
+
+                <div class="authors">
+                    <h5>
+                        <a href="https://vlg.inf.ethz.ch/team/Kaifeng-Zhao.html">Kaifeng Zhao</a><sup>1</sup>&nbsp;
+                        <a href="https://vlg.inf.ethz.ch/team/Dr-Yan-Zhang.html">Yan Zhang</a><sup>1</sup>&nbsp;
+                        <a href="https://vlg.inf.ethz.ch/team/Shaofei-Wang.html">Shaofei Wang</a><sup>1</sup>&nbsp;
+                        <a href="https://thabobeeler.com/">Thabo Beeler</a><sup>2</sup>&nbsp;
+                        <a href="https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html">Siyu Tang</a><sup>1</sup>
+                        <h5>
+                </div>
+
+                <div class="affiliations">
+                    <h5>
+                        <sup>1</sup><a href="https://ethz.ch/en.html">ETH Zürich</a>&nbsp; &nbsp;&nbsp;
+                        <sup>2</sup><a href="https://arvr.google.com/">Google</a> &nbsp;&nbsp;
+                        <h5>
+                </div>
+
+                <div class="downloads">
+                    <br><h3>
+                    <a class="publink" href="" target="_blank" style="text-decoration: none"> ArXiv <i class="fa fa-print"></i></a> &nbsp;
+                    &nbsp;&nbsp;
+                    <a class="publink" href="" target="_blank" style="text-decoration: none"> Code <i class="fa fa-github"></i></a>
+                    <h3>
+                </div>
+
+            </div>
+
+
+            <!-- <br> -->
+
+
+        </div>
+      </header>
+
+
+      <section id="about" class="about-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+
+                  <br><br>
+                  <h2>Overview</h2>
+                  <p class="lead text-justify">
+                     Interaction with environments is one core ability of virtual humans and remains a challenging problem. We propose
+a method capable of generating a sequence of natural interaction events in real cluttered scenes as illustrated in this figure.
+The human first walks to sit on a stool (<font color="#FFFF66">yellow</font> to <font color="#DC143C">red</font>), then walk to another chair to sit down (<font color="#DC143C">red</font> to <font color="#8B008B">magenta</font>), and finally
+walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color="#1E90FF">blue</font>).
+                  </p>
+                 
+                  <p><img class="img-fluid" alt="teaser" width="100%" src="images/teaser_canonical.png"></p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section id="method" class="method-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <br>
+                  <h2>Method</h2>
+                  <p class="lead text-justify">
+                     We formulate synthesizing human behaviors in 3D scenes as a Markov decision porcess with a latent action space, which is learned from motion capture datasets.
+                     <br>
+                     We train scene interaction-aware and goal-driven agent policies to synthesize various human behaviors in indoor scenes including wandering in the room, sitting or lying on an object, and sequential combinations of these actions.
+                  </p>
+                  <p><img class="img-fluid" alt="pipeline" width="100%" src="images/overview.png"></p>
+                  <p class="lead text-justify">
+                     Illustration of our proposed human-scene interaction synthesis framework, which consists of motion model
+                     learning, policy learning, and tree-based search for test-time
+                     optimization. Combing off-the-shelf path finding methods
+                     and static person-scene interaction generation methods, we
+                     can synthesize realistic inhabiting behavior of virutal humans with fine-grained control.
+                  </p>
+                  
+                  <p><img class="img-fluid" alt="pipeline" width="100%" src="images/loco_policy.png"></p>
+                  <p class="text-center">
+                     Illustration of the locomotion policy design.
+                     
+                  </p>
+
+                  <p><img class="img-fluid" alt="pipeline" width="100%" src="images/inter_policy.png"></p>
+                  <p class="text-center">
+                     Illustration of the object interaction policy design.
+                  </p>
+                  
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <section id="video" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Video Results</h2>
+                  <figure>
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                         <source src="videos/inhabit.mp4" type="video/mp4">
+                     </video>
+                     <!-- <center><p class="caption">text.</p></center> -->
+                 </figure>
+               </div>
+            </div>
+         </div>
+      </section>
+      
+
+
+      <section id="contact" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+	                <h2>Contact</h2>
+		            <br>For questions, please contact Kaifeng Zhao:<br><a href="mailto:kaifeng.zhao@inf.ethz.ch">kaifeng.zhao@inf.ethz.ch</a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-5 bg-dark">
+         <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; VLG 2022</p>
+             <p style="text-align:right;font-size:small;" class="text-white">
+            template from <a href="https://neuralbodies.github.io/LEAP/index.html">LEAP</a>
+         </div>
+         <!-- /.container -->
+      </footer>
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Plugin JavaScript -->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom JavaScript for this theme -->
+      <script src="js/scrolling-nav.js"></script>
+   </body>
+</html>
