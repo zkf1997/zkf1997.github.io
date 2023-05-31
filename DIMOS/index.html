@@ -25,7 +25,45 @@
       <!-- nice figures  -->
       <link rel="stylesheet" href="css/font-awesome.css">
       <link rel="icon" type="image/png" href="images/icon.png">
+      
+      <style>
+         .video-container-2x2 {
+           display: grid;
+           grid-template-columns: repeat(2, 1fr);
+           grid-gap: 10px; /* Adjust the gap between videos */
+         }
+         
+         .video-container-2x2 video {
+           width: 100%; /* Adjust the width as needed */
+         }
 
+         .video-container-2 {
+            display: flex;
+            justify-content: space-between;
+         }
+         
+         .video-container-2 video {
+            width: 48%; /* Adjust the width as needed */
+         }
+
+         .caption-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px; /* Adjust the margin as needed */
+         }
+         
+         .caption {
+            width: 48%; /* Adjust the width as needed */
+            text-align: center;
+         }
+
+         .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+  
+       </style>
    </head>
    <body id="page-top">
       <!-- Navigation -->
@@ -179,6 +217,109 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
                      </video>
                      <!-- <center><p class="caption">text.</p></center> -->
                  </figure>
+                 <br>
+
+                 <p class="lead text-justify">
+                  Our method generalize to novel objects and real world scenes.
+                  </p>
+                 <div class="video-container-2x2">
+                        <video class="centered" width="50%" controls="" muted="" loop="" autoplay="">
+                           <source src="videos/chair_1.mkv" type="video/mp4">
+                        </video>
+                     
+                        <video class="centered" width="50%" controls="" muted="" loop="" autoplay="">
+                           <source src="videos/chair_2.mkv" type="video/mp4">
+                        </video>
+                  <!-- </div>
+                  <div class="video-container"> -->
+                        <video class="centered" width="50%" controls="" muted="" loop="" autoplay="">
+                           <source src="videos/chair_3.mkv" type="video/mp4">
+                        </video>
+                        
+                        <video class="centered" width="50%" controls="" muted="" loop="" autoplay="">
+                           <source src="videos/chair_4.mkv" type="video/mp4">
+                        </video>
+                  </div>
+                  <p class="lead text-center">
+                     Sitting on a novel chair with unique shape and low height.
+                  </p>
+                  <br>
+
+                  
+                  <div class="video-container-2">
+                   
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/paris_1.mp4" type="video/mp4">
+                     </video>
+                   
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/paris_2.mp4" type="video/mp4">
+                     </video>
+                                
+                  </div>
+                  <p class="lead text-center">
+                     Walking to sit on a bus stop bench in a Paris street point cloud from <a href="https://npm3d.fr/paris-carla-3d">Paris-CARLA-3D</a>.
+                  </p>
+                  <br>
+                  
+                  <div class="video-container">
+                     <video class="centered" width="50%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/MPH8_new.mp4" type="video/mp4">
+                     </video>
+                  </div>
+                  <p class="lead text-center">
+                     Walking to sit on a bed in a reconstructed room from <a href="https://prox.is.tue.mpg.de/">PROX</a>.
+                  </p>
+                  <br>
+
+                  <p class="lead text-justify">
+                     Comparison with more related works.
+                  </p>
+                  <div class="video-container-2">
+                   
+                        <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                           <source src="videos/MPH16_long.mp4" type="video/mp4">
+                        </video>
+                      
+                        <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                           <source src="videos/MPH16_our.mp4" type="video/mp4">
+                        </video>
+                                   
+                  </div>
+                  <div class="caption-container">
+                     <div class="caption"><a href="https://jiashunwang.github.io/Long-term-Motion-in-3D-Scenes/">[46]</a></div>
+                     <div class="caption">Ours</div>
+                   </div>
+                  <br>
+
+                  <div class="video-container-2">
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/chair0_couch.mp4" type="video/mp4">
+                     </video>
+                   
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/chair0_our.mp4" type="video/mp4">
+                     </video>
+                  </div>
+                  <div class="caption-container">
+                     <div class="caption"><a href="https://virtualhumans.mpi-inf.mpg.de/couch/">COUCH [50]</a></div>
+                     <div class="caption">Ours</div>
+                  </div>
+
+                  <div class="video-container-2">
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/chair7_couch.mp4" type="video/mp4">
+                     </video>
+                   
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/chair7_our.mp4" type="video/mp4">
+                     </video>
+                  </div>
+                  <div class="caption-container">
+                     <div class="caption"><a href="https://virtualhumans.mpi-inf.mpg.de/couch/">COUCH [50]</a></div>
+                     <div class="caption">Ours</div>
+                  </div>
+
                </div>
             </div>
          </div>
