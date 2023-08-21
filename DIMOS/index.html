@@ -6,7 +6,7 @@
       <meta name="description" content="DIMOS">
        <meta name="keywords" content="human-scene interaction synthesis">
       <meta name="author" content="Kaifeng Zhao">
-      <title>Synthesizing Diverse Human Motions in 3D Indoor Scenes</title>
+      <title>DIMOS: Synthesizing Diverse Human Motions in 3D Indoor Scenes</title>
 
       <!--<meta property="og:title" content="EgoBody: ..." />-->
       <!--<meta property="og:description" content="EgoBody is a ... ">-->
@@ -82,23 +82,24 @@
                      <a class="nav-link js-scroll-trigger" href="#demo">Demo</a>
                   </li> -->
                   <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+                  </li>
+                  <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#method">Method</a>
                   </li>
                   <!-- <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#dataset">Dataset</a>
-                  </li>
-                   <li class="nav-item">
-                     <a class="nav-link js-scroll-trigger" href="#results">Results</a>
-                  </li>       -->
+                  </li> -->
+                  
                   <li class="nav-item">
-                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
-                  </li>
+                     <a class="nav-link js-scroll-trigger" href="#results">Results</a>
+                  </li>      
                   <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#related_projects">Related Projects</a>
                   </li>
-                  <!-- <li class="nav-item">
+                  <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#citation">Citation</a>
-                  </li> -->
+                  </li>
                   <!-- <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#team">Team</a>
                   </li> -->
@@ -110,7 +111,7 @@
 
       <header class="bg-light text-black">
           <div class="container text-center">
-             <!-- <h1>Inhabiting the Virtual:</h1> -->
+             <h1>DIMOS</h1>
              <h2>Synthesizing Diverse Human Motions in 3D Indoor Scenes</h2><br>
               <div id="content">
           <div id="content-inner">
@@ -183,7 +184,7 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
                   <p class="lead text-justify">
                      We formulate synthesizing human behaviors in 3D scenes as a Markov decision process with a latent action space, which is learned from motion capture datasets.
                      <br>
-                     We train scene interaction-aware and goal-driven agent policies to synthesize various human behaviors in indoor scenes including wandering in the room, sitting or lying on an object, and sequential combinations of these actions.
+                     We train scene-aware and goal-driven agent policies to synthesize various human behaviors in indoor scenes including wandering in the room, sitting or lying on an object, and sequential combinations of these actions.
                   </p>
                   <!-- <figure>
                      <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
@@ -218,7 +219,7 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
 
                   <p><img class="img-fluid" alt="pipeline" width="100%" src="images/interaction_policy.png"></p>
                   <p class="lead text-center">
-                     Illustration of the object interaction policy design.
+                     Illustration of the fine-grained object interaction policy design.
                   </p>
                   
                </div>
@@ -226,19 +227,31 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
          </div>
       </section>
 
-
-      <section id="video" class="">
+      <section id="video" class="video-section">
          <div class="container">
             <div class="row">
                <div class="col-lg-10 mx-auto">
-                  <h2 class="section-title-tc">Video Results</h2>
-                  <figure>
+                  <h2 class="section-title-tc">Video</h2>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/O3VpvETNjcw" title="DIMOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section id="results" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Results</h2>
+                  <!-- <figure>
                      <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
                          <source src="videos/inhabit.mp4" type="video/mp4">
                      </video>
-                     <!-- <center><p class="caption">text.</p></center> -->
                  </figure>
-                 <br>
+                 <br> -->
 
                  <p class="lead text-justify">
                   Our method generalize to novel objects and real world scenes.
@@ -266,7 +279,9 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
                   </p>
                   <br>
 
-                  
+                  <p class="lead text-justify">
+                     Inhabiting reconstructed scenes.
+                  </p>
                   <div class="video-container-2">
                    
                      <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
@@ -291,6 +306,103 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
                   <p class="lead text-center">
                      Walking to sit on a bed in a reconstructed room from <a href="https://prox.is.tue.mpg.de/">PROX</a>.
                   </p>
+                  <br>
+                  
+                  <p class="lead text-justify">
+                     Interaction with unusual-shaped objects generated by <a href="https://github.com/openai/shap-e">text-to-3D method Shap-E </a>.
+                  </p>
+                  <div class="video-container-2">
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/avacado_0.mp4" type="video/mp4">
+                     </video>
+                   
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/avacado_2.mp4" type="video/mp4">
+                     </video>
+                  </div>
+                  <p class="lead text-center">
+                     Sit on avacado-shaped chairs.
+                  </p>
+                  <div class="video-container-2">
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/dog_1.mp4" type="video/mp4">
+                     </video>
+                   
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/dog_3.mp4" type="video/mp4">
+                     </video>
+                  </div>
+                  <p class="lead text-center">
+                     Sit on dog-shaped chairs.
+                  </p>
+                  <br>
+                  <br>
+
+                  <p class="lead text-justify">
+                     Policy learning process.
+                  </p>
+                  <div class="video-container-2">
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/learn_0.mkv" type="video/mp4">
+                     </video>
+                   
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/learn_50.mkv" type="video/mp4">
+                     </video>
+                  </div>
+                  <div class="caption-container">
+                     <div class="caption">Epoch 0, move randomly and ignore sitting</div>
+                     <div class="caption">Epoch 50, learned to move to the chair </div>
+                  </div>
+                  <br>
+
+                  <div class="video-container-2">
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/learn_100.mkv" type="video/mp4">
+                     </video>
+                   
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/learn_1000.mkv" type="video/mp4">
+                     </video>
+                  </div>
+                  <div class="caption-container">
+                     <div class="caption">Epoch 100, learned to sit</div>
+                     <div class="caption">Epoch 1000, can sit more naturally </div>
+                  </div>
+                  <br>
+                  <br>
+                  
+
+                  <p class="lead text-justify">
+                     Limitations.
+                  </p>
+                  <div class="video-container-2">
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/penetration_1.mkv" type="video/mp4">
+                     </video>
+                   
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/penetration_2.mkv" type="video/mp4">
+                     </video>
+                  </div>
+                  <p class="lead text-center">
+                     As a kinematics-based method, human-scene penetration remains observable in synthesis results.
+                  </p>
+                  <br>
+
+                  <div class="video-container-2">
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/lie_1.mkv" type="video/mp4">
+                     </video>
+                   
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                        <source src="videos/lie_2.mkv" type="video/mp4">
+                     </video>
+                  </div>
+                  <p class="lead text-center">
+                     Insufficient training motion data for lying leads to degraded motion results with unnatural poses. 
+                  </p>
+                  <br>
                   <br>
 
                   <p class="lead text-justify">
@@ -327,7 +439,7 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
                      <div class="caption">Ours</div>
                   </div>
 
-                  <div class="video-container-2">
+                  <!-- <div class="video-container-2">
                      <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
                         <source src="videos/chair7_couch.mp4" type="video/mp4">
                      </video>
@@ -339,7 +451,7 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
                   <div class="caption-container">
                      <div class="caption"><a href="https://virtualhumans.mpi-inf.mpg.de/couch/">COUCH [50]</a></div>
                      <div class="caption">Ours</div>
-                  </div>
+                  </div> -->
 
                </div>
             </div>
