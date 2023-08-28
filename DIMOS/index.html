@@ -165,8 +165,7 @@
                   <br><br>
                   <h2>Overview</h2>
                   <p class="lead text-justify">
-                     Interaction with environments is one core ability of virtual humans and remains a challenging problem. We propose
-a method capable of generating a sequence of natural interaction events in real cluttered scenes as illustrated in this figure.
+                     In this work, we propose a method to generate a sequence of natural human-scene interaction events in real-world complex scenes as illustrated in this figure.
 The human first walks to sit on a stool (<font color="#CCCC00">yellow</font> to <font color="#DC143C">red</font>), then walk to another chair to sit down (<font color="#DC143C">red</font> to <font color="#8B008B">magenta</font>), and finally
 walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color="#1E90FF">blue</font>).
                   </p>
@@ -185,7 +184,6 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
                   <h2>Method</h2>
                   <p class="lead text-justify">
                      We formulate synthesizing human behaviors in 3D scenes as a Markov decision process with a latent action space, which is learned from motion capture datasets.
-                     <br>
                      We train scene-aware and goal-driven agent policies to synthesize various human behaviors in indoor scenes including wandering in the room, sitting or lying on an object, and sequential combinations of these actions.
                   </p>
                   <!-- <figure>
@@ -204,24 +202,28 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
                   <p class="lead text-justify">
                      Illustration of generating random but perpetual motions by recursively sampling the learned motion primitive model.
                   </p> -->
+                  <br>
+                  <br>
                   <p><img class="img-fluid" alt="pipeline" width="100%" src="images/overview.png"></p>
                   <p class="lead text-justify">
-                     Illustration of our proposed human-scene interaction synthesis framework, which consists of motion model
-                     learning, policy learning, and tree-based search for test-time
-                     optimization. Combing off-the-shelf path finding methods
-                     and static person-scene interaction generation methods, we
-                     can synthesize realistic inhabiting behavior of virutal humans with fine-grained control.
+                     Illustration of our proposed human-scene interaction synthesis framework, which consists of learned motion primitive (actions), alongside locomotion and interaction policies generating latent actions conditioned on scenes and interaction goals. 
+                     By integrating navigation mesh-based path-finding and static human-scene interaction generation methods, we can synthesize realistic motion sequences for virtual humans with fine-grained controls.
                   </p>
-                  
+                  <br>
+                  <br>
                   <p><img class="img-fluid" alt="pipeline" width="100%" src="images/locomotion_policy.png"></p>
-                  <p class="lead text-center">
-                     Illustration of the locomotion policy design.
+                  <p class="lead text-justify">
+                     Illustration of the scene-aware locomotion policy network. 
+                     The locomotion policy state consists of the body markers, the goal-reaching feature of normalized direction vectors from markers to the goal pelvis, 
+                     and the interaction feature of a 2D binary map indicating the walkability (<font color="#DC143C">red</font>: non-walkable area, <font color="#1E90FF">blue</font>: walkable area) of the local 1.6m * 1.6m square area. 
+                     The locomotion policy network employs the actor-critic architecture and shares the state encoder.
                      
                   </p>
-
+                  <br>
+                  <br>
                   <p><img class="img-fluid" alt="pipeline" width="100%" src="images/interaction_policy.png"></p>
-                  <p class="lead text-center">
-                     Illustration of the fine-grained object interaction policy design.
+                  <p class="lead text-justify">
+                     Illustration of the object interaction policy network. The interaction policy state consists of the body markers, the goal-reaching features of both distance and direction from current markers to the goal markers, and the interaction features of the signed distances from each marker to the object surfaces and the signed distance gradient at each marker location.  Such interaction features encode the human-object proximity relationship.
                   </p>
                   
                </div>
