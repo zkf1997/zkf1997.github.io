@@ -278,9 +278,10 @@
                  <!-- <br> -->
                  <h4>Text-conditioned motion in-between</h4>
                  <p class="lead text-justify">
-                  Integrating DART with latent space optimization-based control enables the generation of high-quality intermediate motions conditioned on text inputs. 
+                  Integrating DART with latent space optimization-based control enables the generation of high-quality intermediate motions that smoothly transition between the keyframes conditioned on the text semantics. 
+                  Our method outperforms the baseline <a href="https://korrawe.github.io/dno-project/">DNO</a>, particularly in terms of <b>semantic alignment with the text prompts</b>.
                 </p>
-                 <div class="video-container-3">
+                 <!-- <div class="video-container-3">
                   <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
                      <source src="videos/inbetween/walk our.mp4" type="video/mp4">
                   </video>
@@ -298,12 +299,12 @@
                <div class="caption">"walk"</div>
                <div class="caption">"jump forward"</div>
                <div class="caption">"climb down stairs"</div>
-             </div>
-             <br>
+             </div> -->
+             <!-- <br> -->
              
-             <p class="lead text-justify">
+             <!-- <p class="lead text-justify">
                Our method outperforms the baseline <a href="https://korrawe.github.io/dno-project/">DNO</a>, particularly in terms of <b>semantic alignment with the text prompts</b>.
-             </p>
+             </p> -->
             <div class="video-container-2">
                <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
                   <source src="videos/inbetween_20fps/pace_our.mp4" type="video/mp4">
@@ -355,6 +356,40 @@
                "A person crawls", duration 4 seconds (initial frame not visualized to reduce occlusion)
              </p>
 
+             <div class="video-container-2">
+             <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                <source src="videos/inbetween_20fps/climbdown_our_light.mp4" type="video/mp4">
+             </video>
+             
+             <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                <source src="videos/inbetween_20fps/climbdown_omnicontrol_light.mp4" type="video/mp4">
+             </video>
+          </div>
+          <div class="caption-container">
+             <div class="caption">Ours</div>
+             <div class="caption"><a href="https://neu-vi.github.io/omnicontrol/">OmniControl</a></div>
+          </div>
+          <p class="lead text-center">
+             "A person climbs down stairs", duration 2.25 seconds 
+           </p>
+
+             <div class="video-container-2">
+               <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                  <source src="videos/inbetween_20fps/crawl_side_our.mp4" type="video/mp4">
+               </video>
+               
+               <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                  <source src="videos/inbetween_20fps/crawl_side_omnicontrol.mp4" type="video/mp4">
+               </video>
+            </div>
+            <div class="caption-container">
+               <div class="caption">Ours</div>
+               <div class="caption"><a href="https://neu-vi.github.io/omnicontrol/">OmniControl</a></div>
+            </div>
+            <p class="lead text-center">
+               "A person crawls", duration 4 seconds 
+             </p>
+
             
             <br>
             <br>
@@ -385,13 +420,15 @@
             <br>
                  
             <h3>Reinforcement learning-based control</h3>
-            <h4>Waypoint goal reaching</h4>
+            <h4>Text-conditioned waypoint goal reaching</h4>
             <p class="lead text-justify">
                The waypoint reaching task requires the human agent to sequentially reach dynamically updated goals, each visualized as a yellow torus. A new goal waypoint is given to the human agent after the current waypoint has been successfully reached.
-               <br>
-               Our method, combining DART with RL-based control, can generate <b>240 frames per second </b>when tested on a single RTX 4090 GPU, and it outperforms the baseline <a href="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/">GAMMA</a> in motion quality and goal reach success rate.
+               <!-- <br> -->
+               Our method, combining DART with RL-based control, can generate <b>240 frames per second </b>when tested on a single RTX 4090 GPU.
+                <!-- and it outperforms the baseline <a href="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/">GAMMA</a> in motion quality and goal reach success rate. -->
+               Moreover, our method enables the selection of locomotion styles by conditioning the policy with various text prompts, a capability that extends beyond the scope of existing works.
             </p>
-            <div class="video-container-2">
+            <!-- <div class="video-container-2">
                <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
                   <source src="videos/goal_reach/walk.mp4" type="video/mp4">
                </video>
@@ -403,11 +440,9 @@
             <div class="caption-container">
                <div class="caption">Ours: "walk"</div>
                <div class="caption"><a href="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/">GAMMA</a></div>
-               </div>
+               </div> -->
 
-               <p class="lead text-justify">
-               Moreover, our method enables the selection of locomotion styles by conditioning the policy with various text prompts, a capability that extends beyond the scope of existing works.
-               </p>
+            
             
             <div class="video-container-2">
                <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
@@ -435,7 +470,7 @@
                Ours: "hop on left leg"
                </p>
                
-               <div class="video-container-2">
+               <!-- <div class="video-container-2">
                   <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
                      <source src="videos/goal_reach/random_walk.mp4" type="video/mp4">
                   </video>
@@ -447,7 +482,7 @@
                <div class="caption-container">
                   <div class="caption">Ours: "walk"</div>
                   <div class="caption">Ours: "run"</div>
-               </div>
+               </div> -->
                </div>
             </div>
          </div>
