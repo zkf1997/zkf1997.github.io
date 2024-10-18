@@ -428,11 +428,8 @@
             <h3>Reinforcement learning-based control</h3>
             <h4>Text-conditioned waypoint goal reaching</h4>
             <p class="lead text-justify">
-               The waypoint reaching task requires the human agent to sequentially reach dynamically updated goals, each visualized as a yellow torus. A new goal waypoint is given to the human agent after the current waypoint has been successfully reached.
+               The waypoint reaching task requires the human agent to sequentially reach dynamically updated goals, each visualized as a yellow torus. A new goal waypoint is given to the human agent only after the current waypoint has been successfully reached.
                <!-- <br> -->
-               Our method, combining DART with RL-based control, can generate <b>240 frames per second </b>when tested on a single RTX 4090 GPU.
-                <!-- and it outperforms the baseline <a href="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/">GAMMA</a> in motion quality and goal reach success rate. -->
-               Moreover, our method enables the selection of locomotion styles by conditioning the policy with various text prompts, a capability that extends beyond the scope of existing works.
             </p>
             <!-- <div class="video-container-2">
                <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
@@ -448,7 +445,20 @@
                <div class="caption"><a href="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/">GAMMA</a></div>
                </div> -->
 
-            
+               <div class="video-container-2">
+                  <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                     <source src="videos/goal_reach/new/walk_slow.mp4" type="video/mp4">
+                  </video>
+                  
+                  <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                     <source src="videos/goal_reach/new/walk_fast.mp4" type="video/mp4">
+                  </video>
+               </div>
+               <p class="lead text-center">
+                  Ours: "walk"
+               </p>
+
+
             
             <div class="video-container-2">
                <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
@@ -456,7 +466,7 @@
                </video>
                
                <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
-                  <source src="videos/goal_reach/run_10.mp4" type="video/mp4">
+                  <source src="videos/goal_reach/new/run2.mp4" type="video/mp4">
                </video>
             </div>
             <p class="lead text-center">
@@ -469,12 +479,25 @@
                </video>
                
                <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
-                  <source src="videos/goal_reach/hop.mp4" type="video/mp4">
+                  <source src="videos/goal_reach/new/hop0.5.mp4" type="video/mp4">
                </video>
             </div>
             <p class="lead text-center">
                Ours: "hop on left leg"
                </p>
+
+               <!-- <div class="video-container-2">
+                  <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                     <source src="videos/goal_reach/new/hop1.0.mp4" type="video/mp4">
+                  </video>
+                  
+                  <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                     <source src="videos/goal_reach/new/hop0.5.mp4" type="video/mp4">
+                  </video>
+               </div>
+               <p class="lead text-center">
+                  Ours: "hop on left leg" new
+                  </p> -->
                
                <!-- <div class="video-container-2">
                   <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
@@ -489,6 +512,11 @@
                   <div class="caption">Ours: "walk"</div>
                   <div class="caption">Ours: "run"</div>
                </div> -->
+               <p class="lead text-justify">
+                  Our method, combining DART with RL-based control, can generate 240 frames per second when tested on a single RTX 4090 GPU.
+                <!-- and it outperforms the baseline <a href="https://yz-cnsdqz.github.io/eigenmotion/GAMMA/">GAMMA</a> in motion quality and goal reach success rate. -->
+               Moreover, our method enables the selection of locomotion styles by conditioning the policy with various text prompts, a capability that extends beyond the scope of existing works.
+               </p>
                </div>
             </div>
          </div>
