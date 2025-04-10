@@ -104,12 +104,11 @@
                   <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#about">Overview</a>
                   </li>
-                  <!-- <li class="nav-item">
-                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
-                  </li> -->
+                  
                   <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#method">Method</a>
                   </li>
+                  
                   
                   <!-- <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#results">Results</a>
@@ -136,7 +135,9 @@
                      </div>
                    </li>
                   
-                  
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+                  </li>
                   <li class="nav-item">
                      <a class="nav-link js-scroll-trigger" href="#citation">Citation</a>
                   </li>
@@ -183,7 +184,7 @@
                     <br><h3>
                     <a class="publink" href="https://arxiv.org/abs/2410.05260" target="_blank" style="text-decoration: none"> arXiv <i class="fa fa-print"></i></a> &nbsp;
                     &nbsp;&nbsp;
-                    <a class="publink" href="https://github.com/zkf1997/DART" target="_blank" style="text-decoration: none"> Code (coming) <i class="fa fa-github"></i></a>
+                    <a class="publink" href="https://github.com/zkf1997/DART" target="_blank" style="text-decoration: none"> Code <i class="fa fa-github"></i></a>
                     <h3>
                 </div>
 
@@ -206,7 +207,7 @@
                   <h2>Overview</h2>
                   <p class="lead text-justify">
                      In this work, we present <b>DartC</b>ontrol, in short <b>DART</b>, a <b>D</b>iffusion-based <b>A</b>utoregressive motion model for <b>R</b>eal-time <b>T</b>ext-driven motion <b>C</b>ontrol. 
-                     DART achieves high-quality and efficient (<b> > 300 frames per second </b> on single RTX 4090 GPU) motion generation conditioned on online streams of text prompts. 
+                     DART achieves high-quality and efficient (<b> > 300 frames per second </b> on a single RTX 4090 GPU) motion generation conditioned on online streams of text prompts. 
                      Furthermore, by integrating latent space optimization and reinforcement learning-based controls, DART enables various motion generation applications with <b>spatial constraints and goals</b>, including motion in-between, waypoint goal reaching, and human-scene interaction generation.
                   </p>
                  
@@ -233,7 +234,23 @@
                   </p>
                   <br>
                   <br> -->
-                  <h3>DART</h3>
+                  <h3>Autoregressive Motion Primitive Representation</h3>
+                  <p class="lead text-justify">
+                     DART represents infinitely long motion sequences as a series of overlapping motion primitives, with each primitive containing <font color="blue">H history frames</font> that overlap with the previous primitive, and <font color="blue">F future frames</font>.
+                  </p> 
+                  <p><img class="img-fluid" alt="opt" width="100%" src="images/primitive.png"></p>
+                
+
+                  <p class="lead text-justify">
+                  Each frame of the motion primitives is represented using an overparameterized representation based on the SMPL-X parametric body model, including <b>joint rotations</b> compatible with <font color="blue">real-time animation </font>pipelines,  <b>joint locations</b> that form the basis for further <font color="blue">spatial control tasks</font>, and the <b>first-order temporal differences</b> of the location and rotation features.
+                  </p>
+                  <figure>
+                     <video class="centered" width="100%" controls="" muted="" loop="" autoplay="">
+                         <source src="videos/frame.mp4" type="video/mp4">
+                     </video>
+                 </figure>
+
+                  <h3>DART Architechture</h3>
                   <p><img class="img-fluid" alt="pipeline" width="100%" src="images/arch_new.png"></p>
                   <p class="lead text-justify">
                      DART uses an architechture of autoregressive latent diffusion to learn a motion primitive space jointly conditioned on the text prompts and motion history. The encoder and decoder networks are frozen during the training of the denoiser network.
@@ -314,20 +331,6 @@ following joint trajectories, and interacting with scene objects.
             </div>
          </div>
       </section>
-
-      <!-- <section id="video" class="video-section">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-10 mx-auto">
-                  <h2 class="section-title-tc">Video</h2>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/O3VpvETNjcw" title="DIMOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-                  </div>
-                  
-               </div>
-            </div>
-         </div>
-      </section> -->
 
       <section id="results-online" class="">
          <div class="container">
@@ -846,6 +849,19 @@ following joint trajectories, and interacting with scene objects.
 
                   </div>
 
+               </div>
+            </div>
+         </div>
+      </section>
+
+       <section id="video" class="video-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Video</h2>
+                  <div class="embed-responsive embed-responsive-16by9">
+                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Sb8BQhOoOcA?si=t5ZWdCvaebsIwcjm" title="DIMOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                   </div>
                </div>
             </div>
          </div>
