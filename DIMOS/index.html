@@ -236,10 +236,31 @@ walk to and lie on the sofa (<font color="#8B008B">magenta</font> to <font color
             <div class="row">
                <div class="col-lg-10 mx-auto">
                   <h2 class="section-title-tc">Video</h2>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/U7jXrAbelZA?si=F8nPk_fKoVIdu8Kg" title="DIMOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-                  </div>
+
+                  <ul class="nav nav-tabs">
+                     <li class="nav-item">
+                     <a class="nav-link active" data-toggle="tab" href="#youtube">Youtube source</a>
+                     </li>
+                     <li class="nav-item">
+                     <a class="nav-link" data-toggle="tab" href="#bilibili">bilibili source</a>
+                     </li>
+                  </ul>
                   
+                  <!-- Content -->
+                  <div class="tab-content">
+                     <div id="youtube" class="tab-pane active">
+                        <div class="embed-responsive embed-responsive-16by9">
+                           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/U7jXrAbelZA?si=F8nPk_fKoVIdu8Kg" title="DIMOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                         </div>
+                     </div>
+
+                     <div id="bilibili" class="tab-pane">
+                        <div class="embed-responsive embed-responsive-16by9">
+                           <iframe src="https://player.bilibili.com/player.html?bvid=BV1U65SzuEL8&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+                        </div>
+                     </div>
+                  </div>
+
                </div>
             </div>
          </div>
