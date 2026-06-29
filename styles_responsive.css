@@ -49,9 +49,15 @@
     width: 100%;
     height: 100%;
     max-width: none;
-    /* Square image in a square crop: object-position has no effect.
-       Use scale + translateY to zoom and shift the visible area. */
-    transform: scale(1.22) translateY(5%);
+    /* Full-body photo: cover the circle, center on the subject, then
+       zoom in to frame the upper body (head to waist). */
+    object-fit: cover;
+    /* cover makes width fill the circle exactly, so object-position X has no
+       slack to pan -- use translateX in the transform for left/right instead.
+       object-position Y still controls vertical framing. */
+    object-position: center 44%;
+    transform: translateX(-3%) translateY(10%) scale(2.5);
+    transform-origin: center;
   }
 
 
