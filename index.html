@@ -40,13 +40,12 @@
                 <name>Kaifeng Zhao - 赵铠枫</name>
               </p>
               <p>
-                I am a fourth-year PhD student in the <a href="https://vlg.inf.ethz.ch/index.html">Computer Vision and Learning Group</a> (VLG) at <a href="https://ethz.ch/en.html">ETH Zürich</a>, supervised by <a href="https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html">Prof. Siyu Tang</a>. 
-                I am currently interning at the <a href="https://research.nvidia.com/labs/sil/">NVIDIA Spatial Intelligence Lab</a>. 
-                Additionally, I have had the pleasure of collaborating with <a href="https://thabobeeler.com/">Thabo Beeler</a>. 
-                I obtained my Master's degree in Computer Science with distinction from ETH Zürich in 2022, and my Bachelor's degree in Computer Science from Beihang University in 2019.
+                I am a final-year PhD student in the <a href="https://vlg.inf.ethz.ch/index.html">Computer Vision and Learning Group</a> (VLG) at <a href="https://ethz.ch/en.html">ETH Zürich</a>, supervised by <a href="https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html">Prof. Siyu Tang</a>.
+                I previously interned at the NVIDIA <a href="https://research.nvidia.com/labs/sil/">Spatial Intelligence Lab</a> and have had the pleasure to collaborate with <a href="https://thabobeeler.com/">Thabo Beeler</a> at Google.
+                Before my PhD, I obtained my Master's degree in Computer Science with distinction from ETH Zürich in 2022, and my Bachelor's degree in Computer Science from Beihang University in 2019.
               </p>
 
-              <p>My research focuses on the intersection of computer vision and computer graphics, particularly in <strong>human motion modeling and the synthesis of human-scene interaction behaviors</strong>. My research is supported by the <a href="https://www.datascience.ch/phd-fellows">Swiss Data Science Center</a> (SDSC) PhD fellowship.</p>
+              <p>My research goal is to build humanoid agents that can perceive, reason, and behave like humans, enabling applications ranging from virtual characters in digital worlds to humanoid robots in the physical world. Specifically, my PhD research has focused on interactive and controllable human behavior synthesis.</p>
 <!--              <p>My research focuses on human-scene interaction learning, human motion modelling and egocentric human understanding, particularly with the 3D scenes.-->
 <!--              </p>-->
               <p><font color="red">I'm on the job market for full-time positions. Feel free to reach out if you have any openings that I might be a fit for.</font></p>
@@ -88,6 +87,123 @@
 
       <div class="container2">
         <div class="item image2">
+          <video width="100%" height="auto" autoplay="" loop="" muted="" controls="">
+            <source src="ARDY/ardy_teaser.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item text2">
+          <a href="https://dl.acm.org/doi/10.1145/3811284">
+            <papertitle>ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation</papertitle>
+            </a>
+            <br>
+            <strong>Kaifeng Zhao</strong>,
+            <a href="https://mathis.petrovich.fr/"><authorname>Mathis Petrovich</authorname></a>,
+            <a href="https://cs.stanford.edu/~haotianz/"><authorname>Haotian Zhang</authorname></a>,
+            <a href="https://tingwuwang.github.io/"><authorname>Tingwu Wang</authorname></a>,
+            <a href="https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html"><authorname>Siyu Tang</authorname></a>,
+            <a href="https://davrempe.github.io/"><authorname>Davis Rempe</authorname></a>
+            <br>
+            ACM Transactions on Graphics (SIGGRAPH 2026)
+            <br>
+
+            <!-- <div class="box">
+                <a href="https://research.nvidia.com/labs/sil/projects/ardy/"><i class="fa fa-external-link"></i> Project page</a>
+            </div> -->
+            <div class="box">
+                <a href="https://dl.acm.org/doi/10.1145/3811284"><i class="fa fa-file-pdf-o"></i> Paper & Video</a>
+            </div>
+            <button id="bib_button" class="box" onclick="showBib('ardy_bib')"> <i class="fa fa-quote-left"></i> BibTex</button>
+            <div id='ardy_bib' hidden>
+<pre><code>@article{Zhao_2026,
+  title={Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation},
+  volume={45},
+  ISSN={1557-7368},
+  url={http://dx.doi.org/10.1145/3811284},
+  DOI={10.1145/3811284},
+  number={4},
+  journal={ACM Transactions on Graphics},
+  publisher={Association for Computing Machinery (ACM)},
+  author={Zhao, Kaifeng and Petrovich, Mathis and Zhang, Haotian and Wang, Tingwu and Tang, Siyu and Rempe, Davis},
+  year={2026},
+  month={jul},
+  pages={1--14}
+}</code></pre>
+</div>
+
+          <p></p>
+          <p>
+            We present <b>ARDY</b>, an autoregressive diffusion model designed for <b>interactive human(oid) motion generation</b>. ARDY natively supports <b>online text
+prompting</b> alongside a comprehensive suite of flexible <b>kinematic constraints</b> — including root waypoints and trajectories, full-body keyframes, and sparse
+joint positions and rotations — over long horizons.
+          </p>
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="item image2">
+          <img src='https://nvlabs.github.io/motionbricks/static/images/teaser_image_motionbricks.jpg' width=180; height="auto">
+        </div>
+        <div class="item text2">
+          <a href="https://nvlabs.github.io/motionbricks/">
+            <papertitle>MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model and Smart Primitives</papertitle>
+            </a>
+            <br>
+            <a href="https://tingwuwang.github.io/"><authorname>Tingwu Wang</authorname></a><sup>†</sup>,
+            <a href="https://www.linkedin.com/in/odionne/"><authorname>Olivier Dionne</authorname></a><sup>†</sup>,
+            <a href="https://www.linkedin.com/in/michael-de-ruyter-3649ba/"><authorname>Michael De Ruyter</authorname></a>,
+            <a href="https://www.linkedin.com/in/david-minor-992295a8"><authorname>David Minor</authorname></a>,
+            <a href="https://davrempe.github.io/"><authorname>Davis Rempe</authorname></a>,
+            <strong>Kaifeng Zhao</strong>,
+            <a href="https://mathis.petrovich.fr/"><authorname>Mathis Petrovich</authorname></a>,
+            <a href="https://ye-yuan.com/"><authorname>Ye Yuan</authorname></a>,
+            <a href="https://scholar.google.com/citations?user=O_PbKNMAAAAJ"><authorname>Chenran Li</authorname></a>,
+            <a href="https://www.zhengyiluo.com/"><authorname>Zhengyi Luo</authorname></a>,
+            <a href="https://www.linkedin.com/in/brianrobison/"><authorname>Brian Robison</authorname></a>,
+            <a href="https://orcid.org/0009-0001-9905-4409"><authorname>Xavier Blackwell</authorname></a>,
+            <a href="https://www.linkedin.com/in/bernardoantoniazzi/"><authorname>Bernardo Antoniazzi</authorname></a>,
+            <a href="https://xbpeng.github.io/"><authorname>Xue Bin Peng</authorname></a>,
+            <a href="https://yukezhu.me"><authorname>Yuke Zhu</authorname></a>,
+            <a href="https://www.linkedin.com/in/simon-yuen-68ba851"><authorname>Simon Yuen</authorname></a>
+            <br>
+            ACM Transactions on Graphics (SIGGRAPH 2026)
+            <br>
+
+            <div class="box">
+                <a href="https://nvlabs.github.io/motionbricks/"><i class="fa fa-external-link"></i> Project page</a>
+            </div>
+            <div class="box">
+                <a href="https://github.com/NVlabs/GR00T-WholeBodyControl/tree/main/motionbricks"> <i class="fa fa-github"></i> Code</a>
+            </div>
+            <div class="box">
+                <a href="https://dl.acm.org/doi/10.1145/3811334"><i class="fa fa-file-pdf-o"></i> Paper</a>
+            </div>
+            <button id="bib_button" class="box" onclick="showBib('motionbricks_bib')"> <i class="fa fa-quote-left"></i> BibTex</button>
+            <div id='motionbricks_bib' hidden>
+<pre><code>@article{Wang_2026,
+  title={MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model and Smart Primitives},
+  volume={45},
+  ISSN={1557-7368},
+  url={http://dx.doi.org/10.1145/3811334},
+  DOI={10.1145/3811334},
+  number={4},
+  journal={ACM Transactions on Graphics},
+  publisher={Association for Computing Machinery (ACM)},
+  author={Wang, Tingwu and Dionne, Olivier and De Ruyter, Michael and Minor, David and Rempe, Davis and Zhao, Kaifeng and Petrovich, Mathis and Yuan, Ye and Li, Chenran and Luo, Zhengyi and Robison, Brian and Blackwell, Xavier and Antoniazzi, Bernardo and Peng, Xue Bin and Zhu, Yuke and Yuen, Simon},
+  year={2026},
+  month={jul},
+  pages={1--22}
+}</code></pre>
+</div>
+
+          <p></p>
+          <p>
+            <b>MotionBricks</b> is a large-scale, real-time generative framework for motion synthesis, achieving <b>15000 FPS</b> and <b>2 ms latency</b> covering over <b>350,000</b> motion skills by a single neural backbone.
+          </p>
+        </div>
+      </div>
+
+      <div class="container2">
+        <div class="item image2">
           <!-- <img src='DART/images/architechture.png' width=180; height="auto"> -->
           <video width="100%" height="auto" autoplay="" loop="" muted="" controls="">
             <source src="DART/videos/teaser.mp4" type="video/mp4">
@@ -126,7 +242,7 @@
 
           <p></p>
           <p>
-            DartControl achieves high-quality and efficient (<b> > 300 frames per second </b>) motion generation conditioned on online streams of text prompts. 
+            <b>DartControl</b> achieves high-quality and efficient (<b> > 300 frames per second </b>) motion generation conditioned on online streams of text prompts. 
             Furthermore, by integrating latent space optimization and reinforcement learning-based controls, DartControl enables various motion generation applications with <b>spatial constraints and goals</b>, including motion in-between, waypoint goal reaching, and human-scene interaction generation.
           </p>
         </div>
@@ -172,7 +288,7 @@
 
           <p></p>
           <p>
-            VolumetricSMPL is a lightweight extension that adds volumetric capabilities to SMPL(-X) models for efficient 3D interactions and collision detection.
+            <b>VolumetricSMPL</b> is a lightweight extension that adds volumetric capabilities to SMPL(-X) models for efficient 3D interactions and collision detection.
           </p>
         </div>
       </div>
@@ -217,7 +333,7 @@
 
           <p></p>
           <p>
-            EgoM2P: A large-scale egocentric multimodal and multitask model, pretrained on eight extensive egocentric datasets.
+            <b>EgoM2P</b>: A large-scale egocentric multimodal and multitask model, pretrained on eight extensive egocentric datasets.
           </p>
         </div>
       </div>
@@ -264,7 +380,7 @@
 
           <p></p>
           <p>
-            EgoGen is new synthetic data generator that can produce accurate and rich ground-truth training data for egocentric perception tasks.
+            <b>EgoGen</b> is new synthetic data generator that can produce accurate and rich ground-truth training data for egocentric perception tasks.
           </p>
         </div>
       </div>
