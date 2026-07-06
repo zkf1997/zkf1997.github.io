@@ -77,8 +77,8 @@
 .container2 {
     font-family: 'Candara', serif;
     display: grid;
-    grid-template-columns: 25% 75%;
-    gap: 10px;
+    grid-template-columns: 38% 62%;
+    gap: 16px;
     align-items: center;
     margin: 0 auto;
     margin-top: 6px;
@@ -90,13 +90,13 @@
     text-align: left;
   }
 
-.image2 img {
+.image2 img,
+.image2 video {
     max-width: 100%;
     width: 100%;
     max-height: auto;
-    max-width: 250px;
     margin: 10px 0;
-  }
+}
 
 .item.image2 {
     display: flex;
